@@ -68,6 +68,10 @@ app.get('/dashboard', adminOnly, function (req, res) {
      });
 })
 
+app.post('/logout', adminOnly, function (req, res) {
+     req.logout()
+     res.redirect('/');
+})
 
 const startServer = () => {
      try {
