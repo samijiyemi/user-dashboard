@@ -1,1 +1,2 @@
-hero
+web: node src/app.js
+
