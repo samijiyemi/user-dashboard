@@ -61,7 +61,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/dashboard', auth, function (req, res) {
+app.get('/dashboard', adminOnly, function (req, res) {
      const user = req.user
      res.render('dashboard', {
           user: user

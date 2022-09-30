@@ -27,12 +27,12 @@ const adminOnly = async (req, res, next) => {
           const verified = jwt.verify(authHeader, process.env.JWT_SECRET);
 
           await User.findById(verified.id, (err, user) => {
-               if (!user.seller) {
-                    return res.send("not authorized")
+               if (user.seller) {
+                    req.user = user
+                    next()
                }
 
-               req.user = user
-               next()
+
           });
      } catch (err) {
 
