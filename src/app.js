@@ -68,7 +68,7 @@ app.get('/dashboard', adminOnly, function (req, res) {
      });
 })
 
-app.post('/logout', adminOnly, function (req, res) {
+app.get('/logout', adminOnly, function (req, res) {
      req.logout()
      res.redirect('/');
 })
