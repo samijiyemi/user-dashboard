@@ -56,6 +56,10 @@ app.get('/login', function (req, res) {
      res.render('login', { title: "Login", message: null })
 });
 
+app.get('/', function (req, res) {
+     res.render('login');
+});
+
 
 app.get('/dashboard', adminOnly, function (req, res) {
      const user = req.user
